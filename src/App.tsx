@@ -11,20 +11,24 @@ function App() {
 
     let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
     let [collapsedValue, setCollapsedValue] = useState<boolean>(false)
-    let[onValue, setOnValue] = useState<boolean>(false)
+    let [onValue, setOnValue] = useState<boolean>(false)
 
     return (
         <div className={'App'}>
             <PageTitle title={"This is App component"}/>
             <Rating value={ratingValue} onClick={setRatingValue}/>
             <UncontrolledRating/>
+            <UncontrolledAccordion titleValue={'Test'}/>
             <Accordion titleValue={'Menu'}
                        collapsedValue={collapsedValue}
-                       setCollapsedValue={()=>setCollapsedValue(!collapsedValue)}/>
+                       onClick={() => {
+                       }}
+                       setCollapsedValue={() => setCollapsedValue(!collapsedValue)}
+                       items={[{title: '1', value: 1}, {title: '2', value: 2}]}/>
             {/*<UncontrolledAccordion titleValue={"Menu"}/>*/}
-            <UncontrolledAccordion titleValue={"Users"}/>
-             Article 2
-            <UncontrolledOnOff/>
+            {/*<UncontrolledAccordion titleValue={"Users"}/>*/}
+            Article 2
+            {/*<UncontrolledOnOff/>*/}
             <OnOff onValue={onValue} setOnValue={setOnValue}/>
         </div>
     );
