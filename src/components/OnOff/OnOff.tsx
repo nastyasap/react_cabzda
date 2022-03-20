@@ -1,9 +1,11 @@
+import React from "react";
+
 type OnOffType = {
     onValue: boolean
     setOnValue: (onValue: boolean) => void
 }
 
-export const OnOff = (props: OnOffType) => {
+export const OnOffSecret = (props: OnOffType) => {
     const onStyle = {
         width: '30px',
         height: '20px',
@@ -37,3 +39,5 @@ export const OnOff = (props: OnOffType) => {
         <div style={indicatorStyle}></div>
     </div>
 }
+
+export const OnOff = React.memo(OnOffSecret)
