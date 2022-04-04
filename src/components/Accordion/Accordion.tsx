@@ -3,6 +3,8 @@ import React from "react";
 export type ItemType = {
     title: string
     value: any
+    countryId ?: number
+    population ?: number
 }
 
 export type AccordionPropsType = {
